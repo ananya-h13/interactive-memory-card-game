@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memory game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <h2>Memory Game</h2>
+
+    <div class="controls">
+      <span id="moves">Moves: 0</span>
+      <span id="timer">Time: 0s</span>
+
+      <button id="restartBtn">Restart</button>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="game-container" id="gameBoard"></div>
+
+  <p id="result"></p>
+  <p id="bestScore"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

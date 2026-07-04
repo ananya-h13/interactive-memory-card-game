@@ -1,0 +1,172 @@
+:root {
+  --bg1: #667eea;
+  --bg2: #764ba2;
+  --card: rgba(255,255,255,0.2);
+  --text: #111;
+  --accent: #4f46e5;
+}
+
+.dark {
+  --bg1: #0f2027;
+  --bg2: #2c5364;
+  --card: rgba(0,0,0,0.4);
+  --text: #fff;
+  --accent: #00ffc3;
+}
+
+/* BODY BACKGROUND ANIMATION */
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  color: var(--text);
+  background: linear-gradient(-45deg, var(--bg1), var(--bg2), #8f94fb);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  50% { background-position: 100% }
+  100% { background-position: 0% }
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* BOARD */
+.game-container {
+  width: 380px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  perspective: 1200px;
+}
+
+/* CARD */
+.card {
+  width: 85px;
+  height: 85px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: scale(1.08);
+}
+
+/* FLIP */
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+/* FACES */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+/* GLASS FRONT */
+.front {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* BACK */
+.back {
+  background: var(--accent);
+  color: white;
+  transform: rotateY(180deg);
+  font-size: 30px;
+}
+
+/* DARK GLOW */
+.dark .back {
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* BUTTON */
+button {
+  padding: 8px 16px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* RESULT POPUP STYLE */
+#result {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* HISTORY */
+#bestScore {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* TOGGLE */
+.switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  background: #ccc;
+  border-radius: 24px;
+  inset: 0;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: white;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
