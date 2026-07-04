@@ -1,10 +1,10 @@
 # Interactive Memory Card Game
 
-A responsive memory card game built using HTML, CSS, and JavaScript with Dark/Light Mode, score tracking, and Local Storage support.
+A responsive memory card game built with HTML, CSS, and JavaScript featuring Dark/Light Mode, score tracking, timer, move counter, and Local Storage.
 
 ## Live Demo
 
-🔗 https://ananya-h13.github.io/interactive-memory-card-game/
+🔗 **Play Here: ** https://ananya-h13.github.io/interactive-memory-card-game/
 
 ## Features
 
